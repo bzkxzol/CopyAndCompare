@@ -3,7 +3,7 @@ import java.nio.file.Files;
 
 public class Main extends Setup{
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, InterruptedException {
 
         // задаем пути для файлов
         System.out.println("Задайте прямой путь к файлу");
@@ -14,7 +14,8 @@ public class Main extends Setup{
         //Файлы путь к ним
         File sourceFile = new File(sourcePath);
         File destFile = new File(destPath);
-
+        //Проверка существования файла по указанному пути
+        CheckFileExist(sourceFile);
         //Копируем данные из одного файла в другой
         Files.copy(sourceFile.toPath(), destFile.toPath());
         System.out.println("Копия файла создана, путь\n" + destPath);
