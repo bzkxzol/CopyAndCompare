@@ -21,5 +21,7 @@ public class Main extends Setup{
 
         //Сравниваем построчно данные из файлов
         ReadAndCompare(sourceFile,destFile);
+
+        System.console().readLine();
     }
 }
