@@ -1,5 +1,6 @@
 import java.io.*;
 import java.nio.file.NoSuchFileException;
+import java.util.concurrent.TimeUnit;
 
 public class Setup {
 
@@ -12,10 +13,11 @@ public class Setup {
     public static void CheckFileExist(File name) throws InterruptedException {
         try{
             if(!name.isFile())
-            throw new NoSuchFileException("Файл не найден по указаной ссылке");
+            throw new NoSuchFileException("Файл не найден по указанному пути");
         }catch (NoSuchFileException e){
             System.out.println(e.getMessage());
-            System.console().readLine();
+            TimeUnit.SECONDS.sleep(3);
+            System.exit(9);
         }
     }
 
